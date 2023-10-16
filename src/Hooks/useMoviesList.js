@@ -15,7 +15,7 @@ export function useMoviesList(query, callback) {
           setError("");
 
           const res = await fetch(
-            `http://localhost:4001/movies/search/${query}`,
+            `${process.env.REACT_APP_BASE_URL}:4001/movies/search/${query}`,
             { method: "GET", signal: controller.signal }
           );
 

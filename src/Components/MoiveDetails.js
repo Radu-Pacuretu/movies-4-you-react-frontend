@@ -39,7 +39,7 @@ export function MoiveDetails({
         try {
           setIsLoading(true);
           const res = await fetch(
-            `http://localhost:4001/movies/details/${selectedId}`,
+            `${process.env.REACT_APP_BASE_URL}:4001/movies/details/${selectedId}`,
             { method: "GET" }
           );
 
@@ -79,7 +79,7 @@ export function MoiveDetails({
       }
     },
     [userRating]
-  ); 
+  );
 
   function handleAdd() {
     const newMovie = {
